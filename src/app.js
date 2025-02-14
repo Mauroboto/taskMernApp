@@ -9,6 +9,9 @@ import helmet from "helmet";
 
 const app = express();
 
+import swaggerUI from "swagger-ui-express";
+import swaggerDocumentation from "../swagger.json" with {type: "json"};
+
 //CONFIG
 app.use(helmet());
 app.use(compression());
@@ -22,5 +25,8 @@ app.use("/api", tasksRoutes);
 
 //ERROR HANDLER
 app.use(errorHandler);
+
+//SWAGGER
+app.use("/doc", swaggerUI.serve, swaggerUI.setup(swaggerDocumentation));
 
 export default app;
