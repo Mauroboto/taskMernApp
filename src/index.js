@@ -1,5 +1,5 @@
-import cluster from "cluster";
-import os from "os";
+//import cluster from "cluster";
+//import os from "os";
 import app from "./app.js";
 import { connectDB } from "./db.js";
 
@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 4000;
 
 //CLUSTER
 
-const numCPUs = os.cpus().length;
+/* const numCPUs = os.cpus().length;
 
 if (cluster.isPrimary) {
   console.log(`Master process ${process.pid} running`);
@@ -25,10 +25,11 @@ if (cluster.isPrimary) {
     cluster.fork();
   });
 } else {
-  app.listen(PORT, () =>
-    console.log(`Worker ${process.pid} listening on port: ${PORT}`)
-  );
-  app.get("/", (req, res) => {
-    res.send("Server OK");
-  });
-}
+} */
+
+app.listen(PORT, () =>
+  console.log(`Worker ${process.pid} listening on port: ${PORT}`)
+);
+app.get("/", (req, res) => {
+  res.send("Server OK");
+});
