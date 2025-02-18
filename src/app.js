@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import compression from "compression";
 import helmet from "helmet";
+import cors from 'cors'
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(compression());
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser());
+app.use(cors())
 
 //ROUTES
 app.use("/api", userRoutes);
