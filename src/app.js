@@ -35,9 +35,6 @@ app.use("/api", tasksRoutes);
 app.use(errorHandler);
 
 //SWAGGER
-app.use("/doc", swaggerUI.serve, swaggerUI.setup(swaggerDocumentation, {
-    explorer: true,
-    customCss: '.swagger-ui .topbar { display: none }'
-  }));
+app.use("/doc", swaggerUI.serve, swaggerUI.setup(swaggerDocumentation));
 
 export default app;
