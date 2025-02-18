@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import { errorHandler } from "./middlewares/errorHandler.js";
 import compression from "compression";
 import helmet from "helmet";
+import cors from 'cors';
 
 const app = express();
 
@@ -13,6 +14,13 @@ import swaggerUI from "swagger-ui-express";
 import swaggerDocumentation from "../swagger.json" with {type: "json"};
 
 //CONFIG
+app.use(
+    cors({
+      origin: "*",
+      methods: "GET,POST,PUT,DELETE",
+      allowedHeaders: "Content-Type,Authorization",
+    })
+  );
 app.use(helmet());
 app.use(compression());
 app.use(morgan("dev"));

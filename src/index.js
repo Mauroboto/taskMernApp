@@ -2,19 +2,12 @@
 //import os from "os";
 import app from "./app.js";
 import { connectDB } from "./db.js";
-import cors from "cors";
 
 //MONGODB
 connectDB();
 
 //CORS
-app.use(
-  cors({
-    origin: "*",
-    methods: "GET,POST,PUT,DELETE",
-    allowedHeaders: "Content-Type,Authorization",
-  })
-);
+
 
 //ENV
 const PORT = process.env.PORT || 4000;
