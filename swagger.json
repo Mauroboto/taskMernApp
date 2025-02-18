@@ -6,7 +6,7 @@
 
     "version": "1.0.0"
   },
-  "host": "task-crud-app-botodev.up.railway.app/",
+  "host": "task-crud-app-botodev.up.railway.app",
   "basePath": "/",
   "schemes": ["https"],
   "paths": {
