@@ -39,13 +39,7 @@ A task management application built with the following stack (MongoDB, Express, 
    npm install
    ```
 
-3. **Install frontend dependencies**
-   ```bash
-   cd ../frontend
-   npm install
-   ```
-
-4. **Configure environment variables**
+3. **Configure environment variables**
    
    Create a `.env` file in the backend folder with:
    ```
